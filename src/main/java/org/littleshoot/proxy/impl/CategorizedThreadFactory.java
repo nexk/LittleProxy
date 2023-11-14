@@ -39,7 +39,6 @@ public class CategorizedThreadFactory implements ThreadFactory {
     public Thread newThread(Runnable r) {
         Thread t = new Thread(r, name + "-" + uniqueServerGroupId + "-" + category + "-" + threadCount.getAndIncrement());
 
-        t.setDaemon(true);
         t.setUncaughtExceptionHandler(UNCAUGHT_EXCEPTION_HANDLER);
 
         return t;
